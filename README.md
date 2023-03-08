@@ -1,2 +1,2 @@
 # PowerShell
-A collection of my utilized PowerShell tools, scripts, and modules. 
+My collection of PowerShell related system administration scripts/tools.
