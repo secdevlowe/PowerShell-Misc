@@ -1,2 +1,2 @@
 # PowerShell
-My collection of PowerShell related tools I've created that contains various scripts, modules, and other related resources. 
+A collection of PowerShell related tools I've created that contains various frequently used scripts, modules, and other related resources. 
