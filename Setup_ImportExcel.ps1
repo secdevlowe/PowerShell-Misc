@@ -36,7 +36,7 @@ if (-not (Get-Module -ListAvailable -Name $moduleName)) {
 }
 
 # Import the module
-Import-Module "$extractPath"+"ImportExcel.psd1" -Force
+Import-Module $extractPath"\ImportExcel.psd1" -Force
 
 # Verify installation
 if (Get-Module -ListAvailable -Name $moduleName) {
@@ -44,30 +44,3 @@ if (Get-Module -ListAvailable -Name $moduleName) {
 } else {
     Write-Host "Failed to install or import $moduleName." -ForegroundColor Red
 }
-
-<#
-
-A one-click PowerShell script that downloads, installs, and imports the ImportExcel module without admin privileges. Save this as Setup_ImportExcel.ps1 and run it in PowerShell.
-
-How to Use:
-
-1. Save the script as Setup_ImportExcel.ps1.
-
-
-2. Run PowerShell (not as admin).
-
-
-3. Navigate to the script location using:
-
-cd "C:\path\to\script"
-
-
-4. Run the script:
-
-.\Setup_ImportExcel.ps1
-
-
-
-This script automatically installs ImportExcel, imports it, and creates a test Excel file. Let me know if you need modifications!
-
-#>
