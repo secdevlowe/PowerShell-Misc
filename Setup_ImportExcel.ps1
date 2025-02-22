@@ -36,7 +36,7 @@ if (-not (Get-Module -ListAvailable -Name $moduleName)) {
 }
 
 # Import the module
-Import-Module $moduleName -Force
+Import-Module "$extractPath"+"ImportExcel.psd1" -Force
 
 # Verify installation
 if (Get-Module -ListAvailable -Name $moduleName) {
@@ -44,19 +44,6 @@ if (Get-Module -ListAvailable -Name $moduleName) {
 } else {
     Write-Host "Failed to install or import $moduleName." -ForegroundColor Red
 }
-
-# Test the module by creating a test Excel file
-$testData = @"
-Name, Age, City
-John, 25, New York
-Alice, 30, Los Angeles
-Bob, 28, Chicago
-"@ | ConvertFrom-Csv
-
-$testFilePath = "$HOME\Desktop\Test.xlsx"
-$testData | Export-Excel -Path $testFilePath -AutoSize
-
-Write-Host "Test Excel file created at: $testFilePath" -ForegroundColor Cyan
 
 <#
 
